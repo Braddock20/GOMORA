@@ -15,7 +15,7 @@ export async function presign(env,{key,method="GET",expires=3600,contentType}){
   const date=amz.slice(0,8), time=amz.slice(0,15)+"Z";
   const scope=`${date}/${region}/${service}/aws4_request`;
   const q=new URLSearchParams({"X-Amz-Algorithm":"AWS4-HMAC-SHA256","X-Amz-Credential":`${env.B2_KEY_ID}/${scope}`,"X-Amz-Date":time,"X-Amz-Expires":String(Math.min(Math.max(1,expires),604800)),"X-Amz-SignedHeaders":"host"});
-  const canonicalUri=`/${env.B2_BUCKET}${pathFor(key)}`;
+  const canonicalUri=`/${env.B2_BUCKET_NAME}${pathFor(key)}`;
   const canonicalHeaders=`host:${host}\n`;
   const signedHeaders="host";
   const canonicalRequest=[method,canonicalUri,canonicalQuery(q),canonicalHeaders,signedHeaders,"UNSIGNED-PAYLOAD"].join("\n");
