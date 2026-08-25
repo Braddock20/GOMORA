@@ -1,0 +1,22 @@
+{
+  "name": "thread-cloudflare-worker",
+  "version": "2.0.0",
+  "private": true,
+  "type": "module",
+  "description": "THREAD API — Cloudflare Workers + Neon Postgres + Backblaze B2",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "db:migrate": "node scripts/migrate-db.mjs",
+    "db:generate": "node scripts/generate-schema-sql.mjs",
+    "smoke": "node scripts/smoke-test.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.0",
+    "file-type": "^19.5.0",
+    "hono": "^4.9.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.32.0"
+  }
+}
