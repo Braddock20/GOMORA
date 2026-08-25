@@ -1,0 +1,2 @@
+ALTER TABLE "Media" ADD COLUMN IF NOT EXISTS "key" TEXT;
+CREATE INDEX IF NOT EXISTS "Media_key_idx" ON "Media"("key");
