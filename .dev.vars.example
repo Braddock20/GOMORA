@@ -1,0 +1,9 @@
+DATABASE_URL=postgresql://user:password@ep-example.neon.tech/dbname?sslmode=require
+B2_KEY_ID=
+B2_APPLICATION_KEY=
+B2_BUCKET_NAME=glass-journal
+B2_ENDPOINT=https://s3.us-west-004.backblazeb2.com
+B2_REGION=us-west-004
+CORS_ORIGIN=*
+MAX_UPLOAD_BYTES=104857600
+SIGNED_URL_EXPIRES=3600
